@@ -6,17 +6,13 @@
 consultaApi();
 
 const portfolio = document.querySelector('#portfolio');
-const token = '';
+const token = 'f709dbfa3ff55e05765e6c7653908a26';
 
 function consultaApi() {
 
-    const user = '1212733062652290';
+    const user = '1559246331138811';
 
-    const url = `https://api.instagram.com/oauth/authorize
-    ?client_id=${user}
-    &redirect_uri=https://gpbgolf.com
-    &scope={scope}
-    &response_type=user_profile, user_media`;
+    const url = `https://graph.instagram.com/${user}?fields=id,media_type,media_url,username,timestamp&access_token=${token}`;
 
     fetch(url)
         .then(response => response)
